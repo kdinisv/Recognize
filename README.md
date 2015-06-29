@@ -5,4 +5,7 @@ __Example__
 captcha = new Captcha({
     key:'ваш-key'
 });
+captcha.recognize(file).then(function(code){
+    console.log(code); //распознанная капча
+});
 
