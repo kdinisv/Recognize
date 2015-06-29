@@ -16,6 +16,6 @@ captcha.balanse().then(function(err, price){
     if(err) throw err;
     console.log(price);
 });
-
+```
 
 __Ошибки:__
