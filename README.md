@@ -31,6 +31,8 @@ recognize.report(id, function(err, answer){
 ```
 
 __Options:__
+
+Описания опций было взято из сайта <https://rucaptcha.com/api-rucaptcha>
 <table border="1" cellpadding="1" cellspacing="1" style="width:900px">
 	<thead>
 		<tr>
