@@ -1,23 +1,32 @@
 # Recognize
 Recognize - библиотека для работы с сервисом распознавания капчи <https://rucaptcha.com>
 
-__Пример кода:__
+__Пример кода__
 ```js
 captcha = new Captcha({
     key:'ваш-key'
 });
-captcha.recognize(data, {numeric:1, min_len:5}, function(err, code){
+captcha.recognize(data, {numeric:1, min_len:5}, function(err, id, code){
     if(err) throw err;
     console.log(code); //распознанная капча
 });
 ```
-__Получение баланса:__
+__Получение баланса__
 ```js
 captcha.balanse(function(err, price){
     if(err) throw err;
     console.log(price);
 });
 ```
+__Репорт__
+
+В случае, если капча была не верно разгадана, можно вызвать метод report и передать ей id который возвращает callback функция метода recognize
+```js
+captcha.report(id, function(err, answer){
+   console.log(answer);
+});
+```
+
 __Options:__
 <table border="1" cellpadding="1" cellspacing="1" style="width:900px">
 	<thead>
