@@ -1,6 +1,8 @@
 # Recognize
 Recognize - библиотека для работы с сервисом распознавания капчи <https://rucaptcha.com>
 
+[![NPM](https://nodei.co/npm/recognize.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/recognize/)
+
 __Пример кода__
 ```js
 var recognize = new Recognize({
