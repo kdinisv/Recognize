@@ -3,17 +3,20 @@ Recognize - библиотека для работы с сервисом рас�
 
 __Пример кода__
 ```js
-captcha = new Captcha({
+var recognize = new Recognize({
     key:'ваш-key'
 });
-captcha.recognize(data, {numeric:1, min_len:5}, function(err, id, code){
-    if(err) throw err;
-    console.log(code); //распознанная капча
+
+fs.readFile('./captcha.png', function(err, data){
+    recognize.captcha(data, {numeric:1, min_len:5}, function(err, id, code){
+	if(err) throw err;
+	console.log(code); //распознанная капча
+    });
 });
 ```
 __Получение баланса__
 ```js
-captcha.balanse(function(err, price){
+recognize.balance(function(err, price){
     if(err) throw err;
     console.log(price);
 });
@@ -22,7 +25,7 @@ __Репорт__
 
 В случае, если капча была не верно разгадана, можно вызвать метод report и передать ей id который возвращает callback функция метода recognize
 ```js
-captcha.report(id, function(err, answer){
+recognize.report(id, function(err, answer){
    console.log(answer);
 });
 ```
