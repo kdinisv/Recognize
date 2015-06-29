@@ -6,7 +6,7 @@ __Пример кода:__
 captcha = new Captcha({
     key:'ваш-key'
 });
-captcha.recognize(data, [options], function(err, code){
+captcha.recognize(data, {numeric:1, min_len:5}, function(err, code){
     if(err) throw err;
     console.log(code); //распознанная капча
 });
