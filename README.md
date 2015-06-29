@@ -8,10 +8,10 @@ var recognize = new Recognize({
 });
 
 fs.readFile('./captcha.png', function(err, data){
-    recognize.captcha(data, {numeric:1, min_len:5}, function(err, id, code){
-	if(err) throw err;
-	console.log(code); //распознанная капча
-    });
+	recognize.captcha(data, {numeric:1, min_len:5}, function(err, id, code){
+		if(err) throw err;
+		console.log(code); //распознанная капча
+	});
 });
 ```
 __Получение баланса__
