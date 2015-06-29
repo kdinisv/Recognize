@@ -1,0 +1,28 @@
+{
+  "name": "recognize",
+  "version": "0.1.4",
+  "description": "Client for RuCaptcha.com using node.js",
+  "main": "recognize.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kdinisv/Recognize.git"
+  },
+  "keywords": [
+    "captcha",
+    "rucaptcha",
+    "recaptcha.com",
+    "antigate"
+  ],
+  "author": "kdinisv",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kdinisv/Recognize/issues"
+  },
+  "homepage": "https://github.com/kdinisv/Recognize#readme"
+}
