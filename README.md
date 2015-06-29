@@ -26,7 +26,7 @@ __Репорт__
 В случае, если капча была не верно разгадана, можно вызвать метод report и передать ей id который возвращает callback функция метода recognize
 ```js
 recognize.report(id, function(err, answer){
-   console.log(answer);
+   console.log(answer);  //OK_REPORT_RECORDED or ERROR_WRONG_CAPTCHA_ID
 });
 ```
 
