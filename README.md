@@ -1,4 +1,5 @@
 # Recognize
+Recognize - библиотека для работы с сервисом распознавания капчи <https://rucaptcha.com>
 
 __Пример кода:__
 ```js
