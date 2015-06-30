@@ -9,7 +9,7 @@ npm install recognize
 
 ## Service
 * rucaptcha - <https://rucaptcha.com>
-* antigate - <https://anti-captcha.com/>
+* antigate - <https://anti-captcha.com>
 
 ## Documentation
 * [solving](#solving) 

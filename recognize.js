@@ -15,7 +15,7 @@ function Recognize(type, settings)
             break;
         case 'antigate':
             this.baseUrl = 'http://anti-captcha.com';
-            this.id;
+            this.id = 720;
             break;
         default :
             throw new Error('invalid type');
