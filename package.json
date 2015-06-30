@@ -1,6 +1,6 @@
 {
   "name": "recognize",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "Client for RuCaptcha.com using node.js",
   "main": "recognize.js",
   "directories": {

@@ -4,54 +4,45 @@ var http = require('http');
 var uri = require('url');
 var querystring = require('querystring');
 
-var baseUrl = 'http://rucaptcha.com';
-
-function Recognize(options)
+function Recognize(type, settings)
 {
-    this.key = options.key || this.key;
+    this.type = type;
+    switch(type)
+    {
+        case 'rucaptcha':
+            this.baseUrl = 'http://rucaptcha.com';
+            this.id = 768;
+            break;
+        case 'antigate':
+            this.baseUrl = 'http://anti-captcha.com';
+            this.id;
+            break;
+        default :
+            throw new Error('invalid type');
+
+    }
+    this.settings = settings || {};
+    this.key = this.settings.key || this.key;
     require('events').EventEmitter.call(this);
 }
+
 require('util').inherits(Recognize, require('events').EventEmitter);
 
-function get(key, id, cb){
-
-    http.get(baseUrl + '/res.php?key=' + key + '&action=get&id=' + id, function(res){
-        var body = [];
-        res.on('data', function (chunk) {
-            body.push(chunk);
-        });
-        res.on('end', function () {
-            var answer = body.toString().split('|');
-            console.log(answer);
-            switch(answer[0]){
-                case 'OK':
-                    cb(null, answer[1]);
-                    break;
-                case 'CAPCHA_NOT_READY':
-                    setTimeout(get, 1000, key, id, cb);
-                    break;
-                default :
-                    cb(answer[0], null);
-            }
-        });
-    }).on('error', function(err){
-        console.error(err);
-    });
-}
-
 Recognize.prototype = {
-    captcha: function(file, settings, cb){
-
+    solving: function(file, settings, cb){
         if(typeof settings == 'function')
         {
             cb = settings;
             settings = {};
         }
-        settings = settings || {};
+        settings = settings || this.settings || {};
 
         var self = this;
-        var options = uri.parse(baseUrl + '/in.php');
+        var options = uri.parse(this.baseUrl + '/in.php');
         options.method = 'POST';
+        options.headers = {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        };
         var req = http.request(options, function(res){
             var body = [];
             res.on('data', function (chunk) {
@@ -59,11 +50,16 @@ Recognize.prototype = {
             });
             res.on('end', function () {
                 var answer = body.toString().split('|');
-                if(answer[0] == 'OK')
+                //console.log(answer);
+                switch (answer[0])
                 {
-                    get(self.key, answer[1], function(err, code){
-                        cb(err, answer[1], code);
-                    });
+                    case 'OK':
+                        get(self.baseUrl, self.key, answer[1], function(err, code){
+                            cb(err, answer[1], code);
+                        });
+                        break;
+                    default :
+                        cb(answer[0]);
                 }
             });
         });
@@ -71,17 +67,17 @@ Recognize.prototype = {
         req.on('error', function(e) {
             console.error(e);
         });
-
-        settings.soft_id = 768;
+        settings.soft_id = this.id;
         settings.method = 'base64';
-        settings.key = self.key;
+        settings.key = this.key;
         settings.body = file.toString('base64');
         req.write(querystring.stringify(settings));
         req.end();
     },
     balanse: function(cb){
         var self = this;
-        http.get(baseUrl + '/res.php?key=' + self.key + '&action=getbalance', function(res){
+
+        http.get(this.baseUrl + '/res.php?key=' + self.key + '&action=getbalance', function(res){
             var body = [];
             res.on('data', function (chunk) {
                 body.push(chunk);
@@ -96,7 +92,7 @@ Recognize.prototype = {
     report: function(id, cb)
     {
         var self = this;
-        http.get(baseUrl + '/res.php?key=' + self.key + '&action=reportbad&id=' + id, function(res){
+        http.get(this.baseUrl + '/res.php?key=' + self.key + '&action=reportbad&id=' + id, function(res){
             var body = [];
             res.on('data', function (chunk) {
                 body.push(chunk);
@@ -108,4 +104,28 @@ Recognize.prototype = {
             console.error(err);
         });
     }
+};
+
+function get(baseUrl, key, id, cb){
+    http.get(baseUrl + '/res.php?key=' + key + '&action=get&id=' + id, function(res){
+        var body = [];
+        res.on('data', function (chunk) {
+            body.push(chunk);
+        });
+        res.on('end', function () {
+            var answer = body.toString().split('|');
+            switch(answer[0]){
+                case 'OK':
+                    cb(null, answer[1]);
+                    break;
+                case 'CAPCHA_NOT_READY':
+                    setTimeout(get, 1000, baseUrl, key, id, cb);
+                    break;
+                default :
+                    cb(answer[0], null);
+            }
+        });
+    }).on('error', function(err){
+        console.error(err);
+    });
 };

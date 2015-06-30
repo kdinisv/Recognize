@@ -7,11 +7,11 @@ Using NPM utility to install module directly:
 npm install recognize
 ```
 
-##Service
+## Service
 * rucaptcha - <https://rucaptcha.com>
 * antigate - <https://anti-captcha.com/>
 
-##Documentation
+## Documentation
 * [solving](#solving) 
 * [balance](#balance)
 * [report](#report)

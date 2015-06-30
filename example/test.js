@@ -1,23 +1,28 @@
 var Recognize = require('../recognize');
+var fs = require('fs');
 
-var recognize = new Recognize({
-    key:'ключ'
+var recognize = new Recognize('rucaptcha', {
+    key:'api-key'
 });
 
-recognize.balanse(function(price){
-    console.log(price);
+recognize.balanse(function(price)
+{
+    console.log('My balance:', price);
 });
 
-//var fs = require('fs');
-fs.readFile('./captcha.png', function(err, data){
-    captcha.recognize(data, function(err, id, code){
-        console.log(id, code);
+fs.readFile('./example/captcha.png', function(err, data){
+    recognize.solving(data, function(err, id, code)
+    {
+        if(err) throw err;
+        if(code)
+            console.log('Captcha:', code);
+        else
+        {
+            console.log('Captcha not valid');
+            recognize.report(id, function(err, answer)
+            {
+                console.log(answer);
+            });
+        }
     });
 });
-
-recognize.report(131789716, function(err, answer){
-   console.log(answer);
-});
-
-//ERROR_WRONG_CAPTCHA_ID
-//OK_REPORT_RECORDED
