@@ -29,7 +29,7 @@ recognize.captcha(data, {numeric:1, min_len:5}, function(err, id, code){
 ```
 OR
 ```js
-recognize.captcha(data, {numeric:1, min_len:5}, function(err, id, code){
+recognize.captcha(data, function(err, id, code){
 	if(err) throw err;
 	console.log(id, code);
 });
