@@ -17,6 +17,10 @@ function Recognize(type, settings)
             this.baseUrl = 'http://anti-captcha.com';
             this.id = 720;
             break;
+        case 'captcha24':
+            this.baseUrl = 'http://captcha24.com';
+            this.id = 921;
+            break;
         default :
             throw new Error('invalid type');
 
