@@ -8,9 +8,9 @@ npm install recognize
 ```
 
 ## Service
-* rucaptcha - <https://rucaptcha.com>
-* antigate - <https://anti-captcha.com>
-* captcha24 - <http://captcha24.com>
+* [rucaptcha](https://rucaptcha.com/?from=1027759)
+* [antigate](https://anti-captcha.com)
+* [captcha24](http://captcha24.com)
 
 ## Documentation
 * [solving](#solving) 
