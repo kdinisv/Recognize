@@ -1,6 +1,6 @@
 {
   "name": "recognize",
-  "version": "0.2.3",
+  "version": "1.0.0",
   "description": "Client for solving services using node.js",
   "main": "index.js",
   "type": "module",
