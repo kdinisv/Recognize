@@ -2,10 +2,8 @@
   "name": "recognize",
   "version": "0.2.3",
   "description": "Client for solving services using node.js",
-  "main": "recognize.js",
-  "directories": {
-    "example": "example"
-  },
+  "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,7 +14,6 @@
   "keywords": [
     "captcha",
     "rucaptcha",
-    "recaptcha.com",
     "antigate"
   ],
   "author": "kdinisv",
