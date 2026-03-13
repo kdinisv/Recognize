@@ -1,11 +1,29 @@
 {
   "name": "recognize",
-  "version": "2.0.0",
-  "description": "Client for solving services using node.js",
-  "main": "index.js",
+  "version": "3.0.0",
+  "description": "Lightweight zero-dependency captcha solving client for RuCaptcha and Anti-Captcha (API v2)",
   "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -14,7 +32,16 @@
   "keywords": [
     "captcha",
     "rucaptcha",
-    "antigate"
+    "2captcha",
+    "anti-captcha",
+    "anticaptcha",
+    "recaptcha",
+    "hcaptcha",
+    "turnstile",
+    "funcaptcha",
+    "geetest",
+    "solver",
+    "typescript"
   ],
   "author": "kdinisv",
   "license": "MIT",
@@ -22,7 +49,10 @@
     "url": "https://github.com/kdinisv/Recognize/issues"
   },
   "homepage": "https://github.com/kdinisv/Recognize#readme",
-  "dependencies": {
-    "got": "^12.0.0"
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^4.1.0"
   }
 }
