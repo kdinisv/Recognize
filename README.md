@@ -1,12 +1,8 @@
 # Recognize
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/kdinisv/Recognize/master/logo.png" alt="Recognize" width="200">
-</p>
+![Recognize](https://raw.githubusercontent.com/kdinisv/Recognize/master/logo.png)
 
-<p align="center">
-  <b>Captcha solving library for Node.js</b>
-</p>
+**Captcha solving library for Node.js**
 
 **[English](#english)** | **[Русский](#русский)**
 
@@ -14,7 +10,10 @@
 
 ## English
 
-Lightweight zero-dependency captcha solving client for **[RuCaptcha](https://rucaptcha.com/auth/register/?from=1027759)** and **[Anti-Captcha](https://getcaptchasolution.com/mt3qolfnab)** services (API v2).
+Lightweight zero-dependency captcha solving client for **[RuCaptcha][rucaptcha]** and **[Anti-Captcha][anticaptcha]** services (API v2).
+
+[rucaptcha]: https://rucaptcha.com/auth/register/?from=1027759
+[anticaptcha]: https://getcaptchasolution.com/mt3qolfnab
 
 - **0 runtime dependencies** — uses native `fetch` (Node.js 18+)
 - **TypeScript** — full type safety, autocompletion, exported types
@@ -234,7 +233,10 @@ See [LICENSE](LICENSE) file.
 
 ## Русский
 
-Лёгкий клиент для решения капч без сторонних зависимостей. Поддерживает сервисы **[RuCaptcha](https://rucaptcha.com/auth/register/?from=1027759)** и **[Anti-Captcha](https://getcaptchasolution.com/mt3qolfnab)** (API v2).
+Лёгкий клиент для решения капч без сторонних зависимостей. Поддерживает сервисы **[RuCaptcha][rucaptcha-ru]** и **[Anti-Captcha][anticaptcha-ru]** (API v2).
+
+[rucaptcha-ru]: https://rucaptcha.com/auth/register/?from=1027759
+[anticaptcha-ru]: https://getcaptchasolution.com/mt3qolfnab
 
 - **0 зависимостей** — использует встроенный `fetch` (Node.js 18+)
 - **TypeScript** — полная типизация, автодополнение, экспортируемые типы
