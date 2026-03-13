@@ -220,7 +220,7 @@ import type {
 
 ### License
 
-MIT
+See [LICENSE](LICENSE) file.
 
 ---
 
@@ -440,4 +440,4 @@ import type {
 
 ### Лицензия
 
-MIT
+См. файл [LICENSE](LICENSE).
