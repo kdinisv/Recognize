@@ -14,7 +14,7 @@
 
 ## English
 
-Lightweight zero-dependency captcha solving client for **RuCaptcha** and **Anti-Captcha** services (API v2).
+Lightweight zero-dependency captcha solving client for **[RuCaptcha](https://rucaptcha.com/auth/register/?from=1027759)** and **[Anti-Captcha](https://getcaptchasolution.com/mt3qolfnab)** services (API v2).
 
 - **0 runtime dependencies** — uses native `fetch` (Node.js 18+)
 - **TypeScript** — full type safety, autocompletion, exported types
@@ -234,7 +234,7 @@ See [LICENSE](LICENSE) file.
 
 ## Русский
 
-Лёгкий клиент для решения капч без сторонних зависимостей. Поддерживает сервисы **RuCaptcha** и **Anti-Captcha** (API v2).
+Лёгкий клиент для решения капч без сторонних зависимостей. Поддерживает сервисы **[RuCaptcha](https://rucaptcha.com/auth/register/?from=1027759)** и **[Anti-Captcha](https://getcaptchasolution.com/mt3qolfnab)** (API v2).
 
 - **0 зависимостей** — использует встроенный `fetch` (Node.js 18+)
 - **TypeScript** — полная типизация, автодополнение, экспортируемые типы
