@@ -1,5 +1,13 @@
 # Recognize
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/kdinisv/Recognize/master/logo.png" alt="Recognize" width="200">
+</p>
+
+<p align="center">
+  <b>Captcha solving library for Node.js</b>
+</p>
+
 **[English](#english)** | **[Русский](#русский)**
 
 ---
