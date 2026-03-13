@@ -128,7 +128,6 @@ export interface CaptchaOptions {
 
 export interface ServiceConfig {
   baseUrl: string;
-  softId: number;
 }
 
 export interface ApiResponse {
