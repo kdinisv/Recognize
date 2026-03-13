@@ -1,6 +1,6 @@
 {
   "name": "recognize",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "Lightweight zero-dependency captcha solving client for RuCaptcha and Anti-Captcha (API v2)",
   "type": "module",
   "exports": {
