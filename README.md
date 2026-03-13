@@ -225,6 +225,19 @@ import type {
 | `reportBad(id)`                         | `reportIncorrect(taskId)`       |
 | return `{ id, result }`                 | return `{ taskId, solution }`   |
 
+### Comparison with Similar Libraries
+
+| Feature              | **recognize** | `@2captcha/captcha-solver` | `2captcha-ts` |       `rucaptcha-2captcha`       | `anticaptcha` |
+| -------------------- | :-----------: | :------------------------: | :-----------: | :------------------------------: | :-----------: |
+| Runtime dependencies |     **0**     |        `node-fetch`        | `node-fetch`  | `axios` + `cheerio` + `ts-utils` |  `apisauce`   |
+| TypeScript (native)  |      ✅       |           ❌ JS            |     ❌ JS     |                ✅                |     ❌ JS     |
+| ESM + CJS            |      ✅       |             ❌             |      ❌       |                ❌                |      ❌       |
+| RuCaptcha support    |      ✅       |             ✅             |      ✅       |                ✅                |      ❌       |
+| Anti-Captcha support |      ✅       |             ❌             |      ❌       |                ❌                |      ✅       |
+| Actively maintained  |    ✅ 2025    |          ✅ 2025           |    ✅ 2025    |             ❌ 2021              |    ❌ 2022    |
+
+**recognize** is the only library that supports **both** RuCaptcha and Anti-Captcha with **zero runtime dependencies**, written in native TypeScript with a dual ESM/CJS build.
+
 ### License
 
 See [LICENSE](LICENSE) file.
@@ -447,6 +460,19 @@ import type {
 | `reportGood(id)`                        | `reportCorrect(taskId)`         |
 | `reportBad(id)`                         | `reportIncorrect(taskId)`       |
 | return `{ id, result }`                 | return `{ taskId, solution }`   |
+
+### Сравнение с похожими библиотеками
+
+| Функция                | **recognize** | `@2captcha/captcha-solver` | `2captcha-ts` |       `rucaptcha-2captcha`       | `anticaptcha` |
+| ---------------------- | :-----------: | :------------------------: | :-----------: | :------------------------------: | :-----------: |
+| Сторонние зависимости  |     **0**     |        `node-fetch`        | `node-fetch`  | `axios` + `cheerio` + `ts-utils` |  `apisauce`   |
+| TypeScript (нативный)  |      ✅       |           ❌ JS            |     ❌ JS     |                ✅                |     ❌ JS     |
+| ESM + CJS              |      ✅       |             ❌             |      ❌       |                ❌                |      ❌       |
+| Поддержка RuCaptcha    |      ✅       |             ✅             |      ✅       |                ✅                |      ❌       |
+| Поддержка Anti-Captcha |      ✅       |             ❌             |      ❌       |                ❌                |      ✅       |
+| Активно поддерживается |    ✅ 2025    |          ✅ 2025           |    ✅ 2025    |             ❌ 2021              |    ❌ 2022    |
+
+**recognize** — единственная библиотека, которая поддерживает **оба** сервиса (RuCaptcha и Anti-Captcha) при **нулевых зависимостях**, написана на нативном TypeScript с двойной сборкой ESM/CJS.
 
 ### Лицензия
 
